@@ -5,17 +5,21 @@
 }
 
 /* Navbar  */
-
 .nav {
     height: 6.2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: gray;
-    background-color: bisque;
-  }
-  
-  .nav__logo {
+    background-color: #fdfdfd;
+    position: absolute; /* Overlay the background image */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* Ensure it stays above other elements */
+}
+
+.nav__logo {
     margin: 0 1rem;
     display: flex;
     align-items: center; 
@@ -30,94 +34,202 @@
     mix-blend-mode: multiply;
 }
 
-  
-  .nav__menu ul {
+.nav__menu ul {
     margin: 0;
     padding: 0;
     display: flex;
-  }
-  
-  .nav__menu ul li {
+}
+
+.nav__menu ul li {
     list-style: none;
-  }
-  
-  .nav__menu ul li a {
+}
+
+.nav__menu ul li a {
     text-decoration: none;
-    color: gray;
-    padding: 3rem;
+    color: black;
+    padding: 2.5rem;
     display: block;
-  }
-  
-  .nav__menu li:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-  
-  .nav__hamburger {
+    transition: background-color 0.3s;
+}
+
+.nav__menu li:hover {
+    background-color: rgba(118, 117, 117, 0.5);
+    border-radius: 0.5rem;
+}
+
+.nav__hamburger {
     width: 1.875rem;
     height: 1.313rem;
     display: none;
     flex-direction: column;
     justify-content: space-around;
     position: absolute;
-    top: 1rem;
+    top: 2.5rem;
     right: 1rem;
-  }
-  
-  .nav__hamburger__line {
+}
+
+.nav__hamburger__line {
     height: 0.188rem;
     width: 100%;
     background-color: #fff;
     border-radius: 0.625rem;
     transition: all ease-in-out 0.2s;
-  }
-  
-  /* Navbar media */
-  
-  @media screen and (max-width: 880px) {
+}
+
+.background-image {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: relative; /* Allow positioning of child elements */
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Hide overflow */
+}
+
+.background-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire background */
+    z-index: -1; /* Place it behind other elements */
+}
+
+.nav__menu {
+    display: flex; /* Show the menu items by default */
+    align-items: center; /* Center items vertically */
+}
+
+.background_text {
+    position: absolute; /* Position the text absolutely within the background image */
+    right: 2rem; /* Adjust this value to move text further to the right */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-end; /* Align items to the right */
+    color: white; /* Change text color for visibility */
+    text-align: right; /* Align text to the right */
+    padding: 1rem; /* Optional: Add some padding */
+}
+
+.background_text_ {
+    color: #fff;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: 48px;
+    margin-top: 1rem;
+}
+
+.lower_text {
+    color: #fff;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: 32px;
+    margin-top: 1.5rem;
+}
+
+.company_name {
+    color: #fff;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 1.5rem;
+}
+
+/* Navbar media */
+@media screen and (max-width: 880px) {
     .nav__hamburger {
-      display: flex;
-      top: 2.3rem;
+        display: flex; /* Ensure the hamburger is displayed */
+        color: black; /* Optional: Set color for the hamburger */
     }
-  
+
+    .nav__hamburger__line {
+        background-color: black; /* Change the color of the hamburger lines to black */
+    }
+
     .nav__menu {
-      position: absolute;
-      display: flex;
-      align-items: center;
-      background-color: rgba(255, 255, 255, 0.2);
-      top: -10rem;
-      width: 100%;
-      transition: all ease-in-out 0.4s;
+        position: absolute;
+        display: none; /* Keep it hidden by default in mobile view */
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.2);
+        top: 6.2rem; /* Set this to the height of the navbar */
+        width: 100%;
+        transition: all ease-in-out 0.4s;
     }
     .nav {
-      flex-direction: column;
-      align-items: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
     }
     .nav__menu ul {
-      flex-direction: column;
-      width: 100%;
-      padding: 4rem 0 0.6rem;
+        flex-direction: column;
+        width: 100%;
+        padding: 0; /* Remove padding to align with the bottom of the navbar */
     }
     .nav__menu ul li {
-      text-align: center;
+        text-align: center;
     }
     .nav__menu ul li a {
-      padding: 0.5rem;
+        padding: 0.5rem;
     }
     .nav__menu {
-      z-index: -1;
+        z-index: -1;
     }
     .nav__menu.active {
-      top: 0;
+        display: flex; /* Show the menu when active */
+        top: 6rem; /* Position it correctly below the navbar */
+        background-color: white;    
     }
     .nav__hamburger.active :nth-child(1) {
-      transform: rotate(45deg) translate(0.45rem, 0.1875rem);
+        transform: rotate(45deg) translate(0.45rem, 0.1875rem);
     }
-  
+
     .nav__hamburger.active :nth-child(2) {
-      opacity: 0;
+        opacity: 0;
     }
-  
+
     .nav__hamburger.active :nth-child(3) {
-      transform: rotate(-45deg) translate(0.45rem, -0.1875rem);
+        transform: rotate(-45deg) translate(0.45rem, -0.1875rem);
     }
-  }
+
+    .nav__menu ul li a {
+        color: black; /* Change text color to black for visibility against white background */
+        padding: 1rem; /* Adjust padding as necessary */
+        transition: background-color 0.3s; /* Smooth transition for hover effect */
+    }
+
+    .nav__menu ul li a:hover {
+        background-color: rgba(185, 18, 18, 0.5); /* Optional: Change hover color */
+    }
+
+    .background-image img {
+        object-fit: cover; /* Ensure the image fits smaller screens */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .background_text {
+        right: 0; /* Center the text horizontally on smaller screens */
+        top: 50%; /* Keep it centered vertically */
+        transform: translate(-50%, -50%); /* Adjust for vertical and horizontal centering */
+        align-items: center; /* Center items horizontally */
+        text-align: center; /* Center text */
+        padding: 0; /* Remove padding to keep it tight */
+    }
+
+    .background_text_ {
+        font-size: 36px; /* Adjust font size for smaller screens */
+    }
+
+    .lower_text {
+        font-size: 24px; /* Adjust font size for smaller screens */
+    }
+
+    .company_name {
+        font-size: 24px; /* Adjust font size for smaller screens */
+    }
+}
