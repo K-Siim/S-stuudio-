@@ -78,12 +78,10 @@
 
 .background-image {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    position: relative; /* Allow positioning of child elements */
-    width: 100%;
-    height: 100vh; /* Full viewport height */
-    overflow: hidden; /* Hide overflow */
+    justify-content: center; 
+    align-items: center; 
+    position: relative; 
+    height: 100vh; 
 }
 
 .background-image img {
@@ -92,73 +90,62 @@
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Cover the entire background */
-    z-index: -1; /* Place it behind other elements */
+    object-fit: cover; 
+    z-index: -1; 
 }
 
 .nav__menu {
-    display: flex; /* Show the menu items by default */
-    align-items: center; /* Center items vertically */
+    display: flex;
+    align-items: center;
 }
 
 .background_text {
-    position: absolute; /* Position the text absolutely within the background image */
-    right: 2rem; /* Adjust this value to move text further to the right */
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%); /* Adjust for vertical centering */
+    position: absolute; 
+    top: 30%;
+    left: 75%; 
+    transform: translate(-50%, -50%); 
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: flex-end; /* Align items to the right */
-    color: white; /* Change text color for visibility */
-    text-align: right; /* Align text to the right */
-    padding: 1rem; /* Optional: Add some padding */
+    flex-direction: column; 
+    
+    color: white; 
+    text-align: center;
+    padding: 0; 
 }
 
 .background_text_ {
-    color: #fff;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    font-size: 48px;
-    margin-top: 1rem;
+    font-size: 2.5rem; 
+    margin: 0.5rem 0; 
+    
 }
 
 .lower_text {
-    color: #fff;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    font-size: 32px;
-    margin-top: 1.5rem;
+    font-size: 1.5rem; 
+    margin: 0.5rem 0; 
 }
 
 .company_name {
-    color: #fff;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    font-size: 32px;
-    font-weight: bold;
-    margin-top: 1.5rem;
+    font-size: 1.5rem; 
+    font-weight: bold; 
+    margin: 0.5rem 0; 
 }
 
 /* Navbar media */
 @media screen and (max-width: 880px) {
     .nav__hamburger {
-        display: flex; /* Ensure the hamburger is displayed */
-        color: black; /* Optional: Set color for the hamburger */
+        display: flex; 
+        color: black; 
     }
 
     .nav__hamburger__line {
-        background-color: black; /* Change the color of the hamburger lines to black */
+        background-color: black;
     }
 
     .nav__menu {
         position: absolute;
-        display: none; /* Keep it hidden by default in mobile view */
+        display: none; 
         align-items: center;
         background-color: rgba(255, 255, 255, 0.2);
-        top: 6.2rem; /* Set this to the height of the navbar */
+        top: 6.2rem; 
         width: 100%;
         transition: all ease-in-out 0.4s;
     }
@@ -169,7 +156,7 @@
     .nav__menu ul {
         flex-direction: column;
         width: 100%;
-        padding: 0; /* Remove padding to align with the bottom of the navbar */
+        padding: 0; 
     }
     .nav__menu ul li {
         text-align: center;
@@ -181,8 +168,8 @@
         z-index: -1;
     }
     .nav__menu.active {
-        display: flex; /* Show the menu when active */
-        top: 6rem; /* Position it correctly below the navbar */
+        display: flex; 
+        top: 6rem; 
         background-color: white;    
     }
     .nav__hamburger.active :nth-child(1) {
@@ -198,38 +185,36 @@
     }
 
     .nav__menu ul li a {
-        color: black; /* Change text color to black for visibility against white background */
-        padding: 1rem; /* Adjust padding as necessary */
-        transition: background-color 0.3s; /* Smooth transition for hover effect */
+        color: black; 
+        padding: 1rem;
+        transition: background-color 0.3s; 
     }
 
     .nav__menu ul li a:hover {
-        background-color: rgba(185, 18, 18, 0.5); /* Optional: Change hover color */
+        background-color: rgba(185, 18, 18, 0.5); 
     }
 
     .background-image img {
-        object-fit: cover; /* Ensure the image fits smaller screens */
-        height: auto; /* Maintain aspect ratio */
+        object-fit: cover; 
+        height: auto; 
     }
 
     .background_text {
-        right: 0; /* Center the text horizontally on smaller screens */
-        top: 50%; /* Keep it centered vertically */
-        transform: translate(-50%, -50%); /* Adjust for vertical and horizontal centering */
-        align-items: center; /* Center items horizontally */
-        text-align: center; /* Center text */
-        padding: 0; /* Remove padding to keep it tight */
+        
+        left: 50%; 
+        transform: translate(-50%, -50%); 
+        padding: 0; 
     }
 
     .background_text_ {
-        font-size: 36px; /* Adjust font size for smaller screens */
+        font-size: 2rem; 
     }
 
     .lower_text {
-        font-size: 24px; /* Adjust font size for smaller screens */
+        font-size: 1.2rem; 
     }
 
     .company_name {
-        font-size: 24px; /* Adjust font size for smaller screens */
+        font-size: 1.2rem;
     }
 }
