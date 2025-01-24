@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-/* Navbar  */
+/* Navbar */
 .nav {
     height: 6.2rem;
     display: flex;
@@ -12,23 +12,24 @@
     align-items: center;
     color: gray;
     background-color: #fdfdfd;
-    position: absolute; /* Overlay the background image */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10; /* Ensure it stays above other elements */
+    z-index: 10; 
+    transition: background-color 0.3s ease-in-out;
 }
 
 .nav__logo {
     margin: 0 1rem;
     display: flex;
-    align-items: center; 
-    height: 100%; 
+    align-items: center;
+    height: 100%;
 }
 
 .nav__img {
     height: 100%;
-    width: auto; 
+    width: auto;
     object-fit: contain;
     background: none;
     mix-blend-mode: multiply;
@@ -60,28 +61,36 @@
 .nav__hamburger {
     width: 1.875rem;
     height: 1.313rem;
-    display: none;
+    display: none; 
     flex-direction: column;
     justify-content: space-around;
     position: absolute;
     top: 2.5rem;
     right: 1rem;
+    cursor: pointer;
 }
 
 .nav__hamburger__line {
     height: 0.188rem;
     width: 100%;
-    background-color: #fff;
+    background-color: black;
     border-radius: 0.625rem;
     transition: all ease-in-out 0.2s;
 }
 
-.background-image {
+.nav__menu {
     display: flex;
-    justify-content: center; 
-    align-items: center; 
-    position: relative; 
-    height: 100vh; 
+    align-items: center;
+    transition: all 0.4s ease-in-out;
+}
+
+/* Background Image */
+.background-image {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
 }
 
 .background-image img {
@@ -90,131 +99,165 @@
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; 
-    z-index: -1; 
-}
-
-.nav__menu {
-    display: flex;
-    align-items: center;
+    object-fit: cover;
 }
 
 .background_text {
-    position: absolute; 
+    position: absolute;
     top: 30%;
-    left: 75%; 
-    transform: translate(-50%, -50%); 
-    display: flex;
-    flex-direction: column; 
-    
-    color: white; 
+    left: 72%;
+    transform: translate(-50%, -50%);
+    color: white;
     text-align: center;
-    padding: 0; 
+    display: flex;
+    flex-direction: column;
 }
 
 .background_text_ {
-    font-size: 2.5rem; 
-    margin: 0.5rem 0; 
-    
+    font-size: 2.5rem;
+    margin: 0.5rem 0;
 }
 
 .lower_text {
-    font-size: 1.5rem; 
-    margin: 0.5rem 0; 
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
 }
 
 .company_name {
-    font-size: 1.5rem; 
-    font-weight: bold; 
-    margin: 0.5rem 0; 
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
 }
 
-/* Navbar media */
+/* Features Section */
+.features-container {
+    padding-top: 6.2rem; 
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 1.5rem;
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.feature-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    background-color: #eaeaea;
+    cursor: pointer;
+}
+
+.feature-box img {
+    width: 100%;
+    height: 24rem;
+    object-fit: cover;
+    max-width: 300px;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    transition: transform 0.3s;
+}
+
+.feature-box:hover img {
+    transform: scale(1.05);
+}
+
+.feature-box h3 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+.feature-box p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Responsive Design */
 @media screen and (max-width: 880px) {
     .nav__hamburger {
-        display: flex; 
-        color: black; 
-    }
-
-    .nav__hamburger__line {
-        background-color: black;
+        display: flex;
     }
 
     .nav__menu {
-        position: absolute;
-        display: none; 
-        align-items: center;
-        background-color: rgba(255, 255, 255, 0.2);
-        top: 6.2rem; 
-        width: 100%;
-        transition: all ease-in-out 0.4s;
-    }
-    .nav {
+        display: none;
         flex-direction: column;
-        align-items: flex-start;
+        background-color: rgba(255, 255, 255, 0.95);
+        position: absolute;
+        top: 6.2rem;
+        left: 0;
+        width: 100%;
+        z-index: 9;
     }
+
+    .nav__menu.active {
+        display: flex;
+    }
+
     .nav__menu ul {
         flex-direction: column;
         width: 100%;
-        padding: 0; 
     }
+
     .nav__menu ul li {
         text-align: center;
     }
-    .nav__menu ul li a {
-        padding: 0.5rem;
-    }
-    .nav__menu {
-        z-index: -1;
-    }
-    .nav__menu.active {
-        display: flex; 
-        top: 6rem; 
-        background-color: white;    
-    }
-    .nav__hamburger.active :nth-child(1) {
-        transform: rotate(45deg) translate(0.45rem, 0.1875rem);
-    }
-
-    .nav__hamburger.active :nth-child(2) {
-        opacity: 0;
-    }
-
-    .nav__hamburger.active :nth-child(3) {
-        transform: rotate(-45deg) translate(0.45rem, -0.1875rem);
-    }
 
     .nav__menu ul li a {
-        color: black; 
         padding: 1rem;
-        transition: background-color 0.3s; 
+        color: black;
     }
 
-    .nav__menu ul li a:hover {
-        background-color: rgba(185, 18, 18, 0.5); 
-    }
-
-    .background-image img {
-        object-fit: cover; 
-        height: auto; 
+    .background-image {
+        height: 50vh;
     }
 
     .background_text {
-        
-        left: 50%; 
-        transform: translate(-50%, -50%); 
-        padding: 0; 
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
     .background_text_ {
-        font-size: 2rem; 
+        font-size: 2rem;
     }
 
     .lower_text {
-        font-size: 1.2rem; 
+        font-size: 1.2rem;
     }
 
     .company_name {
         font-size: 1.2rem;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .feature-box {
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 1rem;
     }
 }
