@@ -90,6 +90,25 @@
     transition: all 0.4s ease-in-out;
 }
 
+/* Scrollides */
+.scrolled .nav {
+    background-color: white;
+    color: black;
+}
+
+.scrolled .nav__logo img {
+    filter: brightness(1) invert(0);  /* Muuda logo mustaks kui scrollida */
+}
+
+.scrolled .nav__menu ul li a {
+    color: black;  /* Navbar tekst muutub mustaks kui scrollida */
+}
+
+.scrolled .nav__hamburger__line {
+    background-color: black; /* Burxi menüü muutub mustaks kui scrollida */
+}
+
+
 /* Background Image */
 .background-image {
     position: relative;
@@ -351,20 +370,3 @@
     }
 }
 
-/* Scrollides */
-.scrolled .nav {
-    background-color: white;
-    color: black;
-}
-
-.scrolled .nav__logo img {
-    filter: brightness(1) invert(0);  /* Muuda logo mustaks kui scrollida */
-}
-
-.scrolled .nav__menu ul li a {
-    color: black;  /* Navbar tekst muutub mustaks kui scrollida */
-}
-
-.scrolled .nav__hamburger__line {
-    background-color: black; /* Burxi menüü muutub mustaks kui scrollida */
-}
