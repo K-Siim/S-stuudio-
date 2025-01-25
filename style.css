@@ -313,7 +313,7 @@
 
 .eshop_button {
     position: absolute;
-    top: calc(50% + 2.5rem);
+    top: calc(50% + 3.5rem);
     left: 50%;
     transform: translate(-50%, 0);
     background: linear-gradient(135deg, #478f6c, #478f6c);
