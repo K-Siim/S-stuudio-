@@ -11,7 +11,7 @@
     justify-content: space-between;
     align-items: center;
     color: gray;
-    background-color: #fdfdfd;
+    background-color: transparent;  
     position: fixed;
     top: 0;
     left: 0;
@@ -20,6 +20,7 @@
     transition: background-color 0.3s ease-in-out;
 }
 
+/* Navbar logo */
 .nav__logo {
     margin: 0 1rem;
     display: flex;
@@ -27,14 +28,16 @@
     height: 100%;
 }
 
-.nav__img {
+.nav__logo img {
     height: 100%;
     width: auto;
     object-fit: contain;
     background: none;
     mix-blend-mode: multiply;
+    filter: brightness(0) invert(1); /* Teeb logo valgeks kui mitte scrollida */
 }
 
+/* Navbar menu */
 .nav__menu ul {
     margin: 0;
     padding: 0;
@@ -47,16 +50,18 @@
 
 .nav__menu ul li a {
     text-decoration: none;
-    color: black;
+    color: white; /*  Navbari tekst on valge kui seda mitte scrollida*/
     padding: 2.5rem;
     display: block;
     transition: background-color 0.3s;
 }
 
+
 .nav__menu li:hover {
     background-color: rgba(118, 117, 117, 0.5);
     border-radius: 0.5rem;
 }
+
 
 .nav__hamburger {
     width: 1.875rem;
@@ -73,11 +78,12 @@
 .nav__hamburger__line {
     height: 0.188rem;
     width: 100%;
-    background-color: black;
+    background-color: white; /* Burxi menüü jooned valged kui mitte scrollida*/
     border-radius: 0.625rem;
     transition: all ease-in-out 0.2s;
 }
 
+/* Navbar menu visibility */
 .nav__menu {
     display: flex;
     align-items: center;
@@ -142,6 +148,7 @@
     padding: 2rem;
     margin: 0 auto;
     max-width: 1200px;
+    margin-top: 4rem;
 }
 
 .feature-box {
@@ -223,11 +230,15 @@
 
     .nav__menu ul li a {
         padding: 1rem;
-        color: black;
+        color: black;  /* Muudab dropdown teksti mustaks kui scrollida mobiilis */
     }
 
     .background-image {
         height: 50vh;
+    }
+
+    .background-image img {
+        filter: brightness(75%);
     }
 
     .background_text {
@@ -260,4 +271,100 @@
         max-width: 400px;
         margin-bottom: 1rem;
     }
+}
+
+/* e-shop */
+.e-shop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f3f3f3;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: 4rem;
+}
+
+.eshop-img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.eshop-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(60%);
+}
+
+.eshop_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+}
+
+.eshop_button {
+    position: absolute;
+    top: calc(50% + 2.5rem);
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: linear-gradient(135deg, #478f6c, #478f6c);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.eshop_button:hover {
+    background: linear-gradient(135deg, #0056b3, #003f7f);
+    transform: translate(-50%, -3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.eshop_button:active {
+    transform: translate(-50%, 2px);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* e-shop media */
+@media screen and (max-width: 880px) {
+    .eshop_text {
+        font-size: 1.5rem;
+    }
+
+    .eshop_button {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* Scrollides */
+.scrolled .nav {
+    background-color: white;
+    color: black;
+}
+
+.scrolled .nav__logo img {
+    filter: brightness(1) invert(0);  /* Muuda logo mustaks kui scrollida */
+}
+
+.scrolled .nav__menu ul li a {
+    color: black;  /* Navbar tekst muutub mustaks kui scrollida */
+}
+
+.scrolled .nav__hamburger__line {
+    background-color: black; /* Burxi menüü muutub mustaks kui scrollida */
 }
