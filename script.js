@@ -28,7 +28,6 @@ function closeMenu() {
   });
 }
 
-
 window.addEventListener('scroll', () => {
   if (window.scrollY > 0) {
     body.classList.add('scrolled');

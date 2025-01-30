@@ -1,0 +1,226 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar */
+.nav {
+    height: 6.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: gray;
+    background-color: transparent;  
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; 
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Navbar logo */
+.nav__logo {
+    margin: 0 1rem;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.nav__logo img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    background: none;
+    mix-blend-mode: multiply;
+    filter: brightness(0) invert(1); /* Teeb logo valgeks kui mitte scrollida */
+}
+
+/* Navbar menu */
+.nav__menu ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav__menu ul li {
+    list-style: none;
+}
+
+.nav__menu ul li a {
+    text-decoration: none;
+    color: rgb(248, 248, 248); /*  Navbari tekst on valge kui seda mitte scrollida*/
+    padding: 2.5rem;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.nav__menu li:hover {
+    background-color: rgba(118, 117, 117, 0.5);
+    border-radius: 0.5rem;
+}
+
+.nav__hamburger {
+    width: 1.875rem;
+    height: 1.313rem;
+    display: none; 
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    top: 2.5rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+.nav__hamburger__line {
+    height: 0.188rem;
+    width: 100%;
+    background-color: white; /* Burxi menüü jooned valged kui mitte scrollida*/
+    border-radius: 0.625rem;
+    transition: all ease-in-out 0.2s;
+}
+
+/* Navbar menu visibility */
+.nav__menu {
+    display: flex;
+    align-items: center;
+    transition: all 0.4s ease-in-out;
+}
+
+/* Scrollides */
+.scrolled .nav {
+    background-color: white;
+    color: black;
+}
+
+.scrolled .nav__logo img {
+    filter: brightness(1) invert(0);  /* Muuda logo mustaks kui scrollida */
+}
+
+.scrolled .nav__menu ul li a {
+    color: black;  /* Navbar tekst muutub mustaks kui scrollida */
+}
+
+.scrolled .nav__hamburger__line {
+    background-color: black; /* Burxi menüü muutub mustaks kui scrollida */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 880px) {
+    .nav__hamburger {
+        display: flex;
+    }
+
+    .nav__menu {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.95);
+        position: absolute;
+        top: .2rem;
+        left: 0;
+        width: 100%;
+        z-index: 9;
+    }
+
+    .nav__menu.active {
+        display: flex;
+    }
+
+    .nav__menu ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav__menu ul li {
+        text-align: center;
+    }
+
+    .nav__menu ul li a {
+        padding: 1rem;
+        color: black;  /* Muudab dropdown teksti mustaks kui scrollida mobiilis */
+    }
+}
+
+
+.ettevotte-background-image {
+    position: relative;
+    display: flex;
+    filter: brightness(70%);
+    height: 30%;
+    width: 100%;
+    color: white !important;
+}
+
+.ettevote-h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    display: flex;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 5rem;
+}
+
+@media screen and (max-width: 880px) {
+    .ettevote-h2 {
+        font-size: 3rem; 
+        top: 60%; 
+    }
+}
+
+/*  Ettevõtte info  */
+
+.ettevotte-info {
+    display: flex;
+    align-items: center; 
+    margin-top: 10rem; 
+    justify-content: center; /* Keskele joondamine */
+}
+
+.ettevotte-img {
+    border-radius: 50%; 
+    overflow: hidden;  
+    width: 22.5rem; 
+    height: 22.5rem;
+    margin-right: 2rem;
+}
+
+.ettevotte-img img {
+    width: 100%; 
+    height: auto; 
+}
+
+.ettevotte-text {
+    max-width: 50rem; 
+    font-size: 1.5rem;
+    line-height: 1.8; 
+    color: black; 
+    font-weight: 300;
+}
+
+/* Update for better responsiveness */
+@media screen and (max-width: 55em) { /* 55em is approximately 880px */
+    .ettevotte-info {
+        flex-direction: column; /* Stack elements vertically */
+        text-align: center; /* Center text */
+        margin-top: 3rem; /* Adjust margin for mobile */
+    }
+
+    .ettevotte-img {
+        margin-right: 0; 
+        margin-bottom: 1rem; 
+        
+    }
+
+    .ettevotte-text {
+        max-width: 90%; /* Allow more width on mobile */
+        font-size: 1.2rem; /* Adjust font size for mobile */
+        line-height: 1.5; /* Improve line height for readability */
+        margin: 0 auto; /* Center the text block */
+    }
+}
+
