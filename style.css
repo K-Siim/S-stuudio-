@@ -34,7 +34,7 @@
     object-fit: contain;
     background: none;
     mix-blend-mode: multiply;
-    filter: brightness(0) invert(1); /* Teeb logo valgeks kui mitte scrollida */
+    filter: brightness(0) invert(1); 
 }
 
 /* Navbar menu */
@@ -50,7 +50,7 @@
 
 .nav__menu ul li a {
     text-decoration: none;
-    color: white; /*  Navbari tekst on valge kui seda mitte scrollida*/
+    color: white; 
     padding: 2.5rem;
     display: block;
     transition: background-color 0.3s;
@@ -78,7 +78,7 @@
 .nav__hamburger__line {
     height: 0.188rem;
     width: 100%;
-    background-color: white; /* Burxi menüü jooned valged kui mitte scrollida*/
+    background-color: white;
     border-radius: 0.625rem;
     transition: all ease-in-out 0.2s;
 }
@@ -97,15 +97,15 @@
 }
 
 .scrolled .nav__logo img {
-    filter: brightness(1) invert(0);  /* Muuda logo mustaks kui scrollida */
+    filter: brightness(1) invert(0);  
 }
 
 .scrolled .nav__menu ul li a {
-    color: black;  /* Navbar tekst muutub mustaks kui scrollida */
+    color: black;  
 }
 
 .scrolled .nav__hamburger__line {
-    background-color: black; /* Burxi menüü muutub mustaks kui scrollida */
+    background-color: black;
 }
 
 
@@ -217,7 +217,7 @@
     color: #666;
 }
 
-/* Responsive Design */
+/* Mobiil */
 @media screen and (max-width: 880px) {
     .nav__hamburger {
         display: flex;
@@ -249,11 +249,11 @@
 
     .nav__menu ul li a {
         padding: 1rem;
-        color: black;  /* Muudab dropdown teksti mustaks kui scrollida mobiilis */
+        color: black;  
     }
 
     .background-image {
-        height: 50vh;
+        height: 60vh;
     }
 
     .background-image img {
@@ -298,7 +298,6 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f3f3f3;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -360,6 +359,8 @@
 
 /* e-shop media */
 @media screen and (max-width: 880px) {
+    
+    
     .eshop_text {
         font-size: 1.5rem;
         margin-top: -9rem;
@@ -385,7 +386,7 @@
     }
 
     .eshop {
-        margin-bottom: 2rem; /* Add space below the e-shop section */
+        margin-bottom: 2rem; 
     }
 
     
@@ -394,13 +395,12 @@
 
 /*  Nukud  */
 
-/* Nukud Section */
 .Nukud {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2.5rem; /* Increased gap between image and text */
-    padding: 2.5rem; /* Added a bit more padding */
+    gap: 2.5rem; 
+    padding: 2.5rem;
     margin: 0 auto;
     max-width: 1200px;
     margin-top: 4rem;
@@ -412,11 +412,11 @@
 
 .nuku-pilt img {
     width: 100%;
-    max-width: 500px; /* Larger image size */
+    max-width: 500px; 
     height: auto;
-    border: 3px solid #ddd; /* Thicker border around the image */
-    border-radius: 10px; /* Rounder corners */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow for more emphasis */
+    border: 3px solid #ddd;
+    border-radius: 10px; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .nukkude-tutvustus {
@@ -428,17 +428,17 @@
 }
 
 .nukkude-tutvustus-text {
-    font-size: 1.5rem; /* Larger text size */
+    font-size: 1.5rem; 
     color: black;
-    line-height: 1.8; /* Increased line height for better readability */
-    margin-bottom: 2.5rem; /* Added more space below the paragraph */
-    font-weight: 300; /* Optional for better readability */
+    line-height: 1.8; 
+    margin-bottom: 2.5rem; 
+    font-weight: 300; 
 }
 
 .nukkude-nupp {
     align-self: flex-start;
-    padding: 1.2rem 2.5rem; /* Larger button */
-    font-size: 1.5rem; /* Larger font size for button */
+    padding: 1.2rem 2.5rem; 
+    font-size: 1.5rem; 
     background: linear-gradient(135deg, #478f6c, #478f6c);
     color: white;
     font-weight: bold;
@@ -463,30 +463,31 @@
 /* Nukkude mobil view*/
 @media screen and (max-width: 880px) {
     .Nukud {
-        margin-top: 0; 
+        margin-top: -14rem; 
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
 
     .nuku-pilt {
-        margin-bottom: 2.5rem; /* More space between image and text */
+        margin-bottom: 2.5rem; 
     }
 
     .nuku-pilt img {
         width: 100%;
-        max-width: 380px; /* Larger image size for mobile */
-        border-radius: 12px; /* Rounder corners on mobile */
+        max-width: 380px; 
+        border-radius: 12px; 
+        
     }
 
     .nukkude-tutvustus-text {
        
         line-height: 1.8;
-        margin-bottom: 2rem; /* Added more space below the paragraph */
+        margin-bottom: 2rem;
     }
 
     .nukkude-nupp {
-        font-size: 1.4rem; /* Larger button for mobile */
+        font-size: 1.4rem; 
         padding: 1.2rem 2.2rem;
     }
 }
