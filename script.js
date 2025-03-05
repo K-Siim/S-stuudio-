@@ -35,3 +35,50 @@ window.addEventListener('scroll', () => {
     body.classList.remove('scrolled');
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const carousels = document.querySelectorAll(".carousel");
+
+  carousels.forEach((carousel) => {
+    const container = carousel.parentElement;
+    const leftArrow = container.querySelector(".left-arrow");
+    const rightArrow = container.querySelector(".right-arrow");
+
+    const scrollAmount = 240; // Adjusted for better scrolling
+
+    leftArrow.addEventListener("click", () => {
+      carousel.scrollBy({
+        left: -scrollAmount,
+        behavior: "smooth",
+      });
+    });
+
+    rightArrow.addEventListener("click", () => {
+      carousel.scrollBy({
+        left: scrollAmount,
+        behavior: "smooth",
+      });
+    });
+
+    carousel.addEventListener("scroll", () => {
+      // Disable arrows when reaching the start or end
+      leftArrow.disabled = carousel.scrollLeft === 0;
+      rightArrow.disabled =
+        carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth;
+    });
+  });
+});
+
+document.querySelectorAll('.sidebar-menu a').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    const targetSection = document.querySelector(targetId);
+    if (targetSection) {
+      targetSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
