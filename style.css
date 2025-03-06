@@ -34,7 +34,6 @@
     object-fit: contain;
     background: none;
     mix-blend-mode: multiply;
-    filter: brightness(0) invert(1); 
 }
 
 /* Navbar menu */
@@ -50,7 +49,7 @@
 
 .nav__menu ul li a {
     text-decoration: none;
-    color: white; 
+    color: rgb(0, 0, 0); 
     padding: 2.5rem;
     display: block;
     transition: background-color 0.3s;
@@ -132,7 +131,7 @@
     top: 30%;
     left: 72%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: rgb(0, 0, 0);
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -264,6 +263,7 @@
         top: 55%;
         left: 50%;
         transform: translate(-50%, -50%);
+        color: white;
     }
 
     .background_text_ {
@@ -306,7 +306,7 @@
 .eshop-img {
     position: relative;
     width: 100%;
-    height: 70%;
+    height: 90%;
 }
 
 .eshop-img img {

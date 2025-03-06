@@ -3,12 +3,14 @@ const linksContainer = document.querySelector(".nav__menu");
 const links = document.querySelectorAll(".nav__menu__link");
 const body = document.body;
 
+// Event Listeners for Hamburger Menu
 hamburger.addEventListener("click", (e) => {
   e.preventDefault();  
   linksContainer.classList.toggle("active");
   hamburger.classList.toggle("active");
 });
 
+// Window Resize Event
 window.addEventListener("resize", () => {
   if (window.matchMedia("(max-width: 550px)").matches) {
     closeMenu();
@@ -19,15 +21,7 @@ if (window.matchMedia("(max-width: 550px)").matches) {
   closeMenu();
 }
 
-function closeMenu() {
-  links.forEach((link) => {
-    link.addEventListener("click", () => {
-      linksContainer.classList.remove("active");
-      hamburger.classList.remove("active");
-    });
-  });
-}
-
+// Scroll Event for Body
 window.addEventListener('scroll', () => {
   if (window.scrollY > 0) {
     body.classList.add('scrolled');
@@ -36,6 +30,7 @@ window.addEventListener('scroll', () => {
   }
 });
 
+// Carousel Functionality
 document.addEventListener("DOMContentLoaded", function () {
   const carousels = document.querySelectorAll(".carousel");
 
@@ -44,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const leftArrow = container.querySelector(".left-arrow");
     const rightArrow = container.querySelector(".right-arrow");
 
-    const scrollAmount = 240; // Adjusted for better scrolling
+    const scrollAmount = 240; 
 
     leftArrow.addEventListener("click", () => {
       carousel.scrollBy({
@@ -61,7 +56,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     carousel.addEventListener("scroll", () => {
-      // Disable arrows when reaching the start or end
       leftArrow.disabled = carousel.scrollLeft === 0;
       rightArrow.disabled =
         carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth;
@@ -69,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Smooth Scroll for Sidebar Menu
 document.querySelectorAll('.sidebar-menu a').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
@@ -82,3 +77,12 @@ document.querySelectorAll('.sidebar-menu a').forEach(anchor => {
     }
   });
 });
+
+function closeMenu() {
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      linksContainer.classList.remove("active");
+      hamburger.classList.remove("active");
+    });
+  });
+}
